@@ -63,7 +63,7 @@ func Cat(flags cmd.Flags, args []string) {
 	fileName := flags.String["f"]
 
 	if fileName == "" {
-		log.Fatal("blaaaaaaaah")
+		log.Fatal("Please specify a file name")
 	}
 
 	file, err := os.Open(fileName)
