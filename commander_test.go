@@ -191,3 +191,22 @@ func TestParseFlagsWithShortNames(t *testing.T) {
 		t.Error(`Expected short name for "flag" ("f") to be parsed correctly`)
 	}
 }
+
+func ExampleUseage() {
+	cmder := NewCommander()
+
+	c := Command{
+		Name:        "test",
+		Description: "A fake command for testing",
+		Flags:       []Flag{},
+		Execute:     func(flags Flags, args []string) {},
+	}
+
+	cmder.RegisterCommand(c)
+
+	cmder.Usage()
+	// Output:
+	// Commands Available:
+	//
+	// test - A fake command for testing
+}
